@@ -1,10 +1,10 @@
-CXX=		g++ $(CCFLAGS)
+CXX=		g++ $(CXXFLAGS)
 CONDITION=	main.o first.o second.o
 OBJS =		$(CONDITION)
 
 LIBS=		-pthread -std=c++11
 
-CCFLAGS= -g
+CXXFLAGS= -g
 
 all:		condition
 
@@ -18,6 +18,6 @@ realclean:
 		rm -f $(OBJS) $(OBJS:.o=.d) condition
 
 %.o : %.cc
-		$(CXX) -c -o $@ -MD -MP ${CPPFLAGS} ${CXXFLAGS} $<
+		$(CXX) -c -o $@ -MD -MP ${CXXFLAGS} $<
 
 -include	$(OBJS:.o=.d)

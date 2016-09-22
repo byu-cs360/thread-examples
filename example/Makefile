@@ -1,10 +1,10 @@
-CXX=		g++ $(CCFLAGS)
+CXX=		g++ $(CXXFLAGS)
 EXAMPLE=	main.o
 OBJS =		$(EXAMPLE)
 
 LIBS=		-pthread -std=c++11
 
-CCFLAGS= -g
+CXXFLAGS= -g
 
 all:		example
 
@@ -18,6 +18,6 @@ realclean:
 		rm -f $(OBJS) $(OBJS:.o=.d) example
 
 %.o : %.cc
-		$(CXX) -c -o $@ -MD -MP ${CPPFLAGS} ${CXXFLAGS} $<
+		$(CXX) -c -o $@ -MD -MP ${CXXFLAGS} $<
 
 -include	$(OBJS:.o=.d)
