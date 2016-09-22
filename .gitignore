@@ -1,2 +1,8 @@
 *.o
 *~
+*.d
+problem/problem
+example/example
+mutex/mutex
+condition/condition
+
